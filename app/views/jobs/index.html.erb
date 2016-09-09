@@ -1,0 +1,8 @@
+<h1>Active jobs</h1>
+<% @job.each do |j| %>
+<div class="well well-lg">
+<h3><a href=#><%= j.title %></a></h3>
+<p>Closing date: <%= j.closeDate %></p>
+<p>Ref: <%= j.id %></p>
+</div>
+<% end %>

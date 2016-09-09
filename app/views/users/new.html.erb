@@ -1,0 +1,33 @@
+<div class="col-md-9">
+<h1>Create your account</h1>
+<%= form_for @user do |f| %>
+<%= render 'shared/error_messages' %>
+</div>
+<div class="col-md-4">
+<div class="form-group">
+<%= f.label :firstname %>
+<%= f.text_field :firstname, class: "form-control" %>
+</div>
+<div class="form-group">
+<%= f.label :lastname %>
+<%= f.text_field :lastname, class: "form-control"  %>
+</div>
+<div class="form-group">
+<%= f.label :email, "Work email" %>
+<%= f.text_field :email, class: "form-control"  %>
+</div>
+<div class="form-group">
+<%= f.label :email_confirmation, "Confirm work email" %>
+<%= f.text_field :email_confirmation, class: "form-control"  %>
+</div>
+<div class="form-group">
+<%= f.label :password_digest, "Password" %>
+<%= f.text_field :password_digest, class: "form-control", type: "password" %>
+</div>
+<div class="form-group">
+<%= f.label :password_digest_confirmation, "Confirm password" %>
+<%= f.text_field :password_digest_confirmation, class: "form-control", type: "password" %>
+</div>
+<%= f.submit class: "btn btn-primary"  %>
+<% end %>
+</div>

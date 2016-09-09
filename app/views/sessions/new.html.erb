@@ -1,0 +1,15 @@
+<div class="col-md-4">
+<h1>Sign in</h1>
+<%= form_for(:session, url: login_path) do |f| %>
+<div class="form-group">
+<%= f.label :email, "Work email" %>
+<%= f.text_field :email, class: "form-control"  %>
+</div>
+<div class="form-group">
+<%= f.label :password_digest, "Password" %>
+<%= f.text_field :password_digest, class: "form-control", type: "password" %>
+</div>
+<%= f.submit "Sign in", class: "btn btn-primary"  %>
+<% end %>
+<p>Click here to <%= link_to "create an account", controller: "users", action: "new" %>.</p>
+</div>

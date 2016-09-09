@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EasyRecruit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= favicon_link_tag %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="container">
+	<div class="row">
+  		<div class="col-md-12">
+			<header>
+				<%= image_tag("logo.png") %>
+			</header>
+			<br>
+				<nav>
+				<ul class="nav nav-pills">
+				  <li role="presentation" class="active"><%= link_to "Dashboard", root_path %></li>
+				  <li role="presentation"><%= link_to "Jobs", jobs_path %></li>
+				  <li role="presentation"><%= link_to "Sign in", login_path %></li>
+				</ul>
+				</nav>
+		</div>
+	</div>
+	<main>
+		<div class="row">
+	    <div class="col-md-12">
+	     	<%= yield %>
+   		 </div>
+   		</div>
+   	</div>
+   </main>
+   <footer>
+   </footer>
+</body>
+</html>
+
+ 	
