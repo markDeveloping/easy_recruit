@@ -23,6 +23,10 @@
 				  <li role="presentation"><%= link_to "Sign in", login_path %></li>
 				</ul>
 				</nav>
+				<% flash.each do |message_type, message| %>
+				<br>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
 		</div>
 	</div>
 	<main>

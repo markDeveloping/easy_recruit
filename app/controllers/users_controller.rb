@@ -14,7 +14,6 @@ class UsersController < ApplicationController
 			flash[:success] = "Welcome to easy recruit."
 			redirect_to @user
 		else
-			flash[:danger] = ""
 			render 'new'
 		end
 	end
@@ -22,7 +21,7 @@ class UsersController < ApplicationController
 	private
 
 	def user_params
-		params.require(:user).permit(:firstname, :lastname, :email, :email_confirmation, :password_digest, :password_digest_confirmation)
+		params.require(:user).permit(:firstname, :lastname, :email, :email_confirmation, :password, :password_confirmation)
 	end
 
 end
