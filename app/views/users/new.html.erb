@@ -1,9 +1,9 @@
 <div class="col-md-9">
 <h1>Create your account</h1>
-<%= form_for @user do |f| %>
 <%= render 'shared/error_messages' %>
 </div>
 <div class="col-md-4">
+	<%= form_for @user do |f| %>
 <div class="form-group">
 <%= f.label :firstname %>
 <%= f.text_field :firstname, class: "form-control" %>
