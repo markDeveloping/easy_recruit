@@ -20,7 +20,11 @@
 				<ul class="nav nav-pills">
 				  <li role="presentation" class="active"><%= link_to "Dashboard", root_path %></li>
 				  <li role="presentation"><%= link_to "Jobs", jobs_path %></li>
+				  <% if logged_in? %>
+				  <li role="presentation"><%= link_to "Log out", logout_path, method: "delete" %></li>
+				  <% else %>
 				  <li role="presentation"><%= link_to "Sign in", login_path %></li>
+				  <% end %>
 				</ul>
 				</nav>
 				<% flash.each do |message_type, message| %>
