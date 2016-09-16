@@ -17,12 +17,12 @@
 <%= f.text_field :email, class: "form-control"  %>
 </div>
 <div class="form-group">
-<%= f.label :department_id %>
-<%= f.select :department_id, Department.all.collect { |d| [ d.name, d.id ] }, {include_blank: true}, class: "form-control" %>
-</div>
-<div class="form-group">
 <%= f.label :email_confirmation, "Confirm work email" %>
 <%= f.text_field :email_confirmation, class: "form-control"  %>
+</div>
+<div class="form-group">
+<%= f.label :department_id %>
+<%= f.select :department_id, Department.all.collect { |d| [ d.name, d.id ] }, {include_blank: true}, class: "form-control" %>
 </div>
 <div class="form-group">
 <%= f.label :password, "Password" %>
