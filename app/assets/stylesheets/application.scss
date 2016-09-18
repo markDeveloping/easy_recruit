@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -27,3 +28,26 @@ footer {
 .navbar-default .navbar-brand {
 	color: #333;
 }
+
+.thumbnail {
+	text-align: center;	
+	padding-top: 20px;
+	padding-bottom: 30px;
+	margin-top: 20px;
+	background-color: #f9f9f9;
+	border-radius: 2px;
+	border: #ffffff;
+	color: #333333;
+	.glyphicon {
+		font-size: 1.8em;
+		display: block;
+		padding-bottom: 10px;
+	}
+}
+
+.thumbnail:hover, .thumbnail:focus {
+	text-decoration: none;
+	color: #fff;
+	background-color: #563d7c;
+}
+
