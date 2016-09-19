@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 		if @user.save
 			log_in @user
 			flash[:success] = "Welcome to easy recruit."
-			redirect_to @user
+			redirect_to dashboard_path
 		else
 			render 'new'
 		end

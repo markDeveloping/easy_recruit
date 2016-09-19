@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
 
-		before_action :logged_in_user, only: [:index]
+		before_action :logged_in_user, only: [:index, :new]
 
 	def index
 		@job = Job.all
