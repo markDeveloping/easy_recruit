@@ -1,4 +1,7 @@
 class JobsController < ApplicationController
+
+		before_action :logged_in_user, only: [:index]
+
 	def index
 		@job = Job.all
 	end
@@ -17,4 +20,13 @@ class JobsController < ApplicationController
 	def edit 
 		@job = Job.find(params[:id])
 	end
+
+	private
+
+	def logged_in_user
+      unless logged_in?
+        flash[:danger] = "Please log in."
+        redirect_to login_url
+      end
+    end
 end
