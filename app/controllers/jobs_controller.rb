@@ -12,7 +12,7 @@ class JobsController < ApplicationController
 
 	def create
 		@job = Job.new(job_params)
-		if @jobs.save
+		if @job.save
 			redirect_to :action => 'index'
 		end
 	end
@@ -22,6 +22,10 @@ class JobsController < ApplicationController
 	end
 
 	private
+
+	def job_params
+	params.require(:job).permit(:title, :jobDescription, :personalSpec, :work_pattern_id, :contract_id)
+	end
 
 	def logged_in_user
       unless logged_in?
