@@ -1,4 +1,6 @@
 <h1>Active jobs</h1>
+<%= link_to "<span class='glyphicon glyphicon-plus' aria-hidden='true'></span> Add a job".html_safe, {controller: "jobs", action: "new"}, method: "get", class: "btn btn-primary" %>
+<br><br>
 <% @job.each do |j| %>
 <div class="well well-lg">
 <h3><a href=#><%= j.title %></a></h3>
