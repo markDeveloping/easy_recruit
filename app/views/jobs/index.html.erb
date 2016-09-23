@@ -6,5 +6,6 @@
 <h3><a href=#><%= j.title %></a></h3>
 <p>Created at: <%= j.created_at.strftime("%d/%m/%Y") %></p>
 <p>Ref: <%= j.id %></p>
+<%= link_to "Edit job advert", edit_job_path(j.id), class: "btn btn-default" %>
 </div>
 <% end %>
