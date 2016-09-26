@@ -5,20 +5,20 @@
 <div class="col-md-4">
 	<%= form_for @user do |f| %>
 <div class="form-group">
-<%= f.label :firstname %>
+<%= f.label :firstname, "First name" %>
 <%= f.text_field :firstname, class: "form-control" %>
 </div>
 <div class="form-group">
-<%= f.label :lastname %>
+<%= f.label :lastname, "Last name"%>
 <%= f.text_field :lastname, class: "form-control"  %>
 </div>
 <div class="form-group">
 <%= f.label :email, "Work email" %>
-<%= f.text_field :email, class: "form-control"  %>
+<%= f.email_field :email, class: "form-control"  %>
 </div>
 <div class="form-group">
 <%= f.label :email_confirmation, "Confirm work email" %>
-<%= f.text_field :email_confirmation, class: "form-control"  %>
+<%= f.email_field :email_confirmation, class: "form-control"  %>
 </div>
 <div class="form-group">
 <%= f.label :department_id %>

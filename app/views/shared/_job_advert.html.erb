@@ -1,4 +1,4 @@
-<div class="col-md-4">
+<div class="col-md-6">
 <%= form_for @job do |f| %>
 <div class="form-group">
 <%= f.label :title %>
@@ -6,11 +6,11 @@
 </div>
 <div class="form-group">
 <%= f.label :jobDescription, "Job description" %>
-<%= f.text_area :jobDescription, class: 'form-control' %>
+<%= f.text_area :jobDescription, rows: "9", class: 'form-control' %>
 </div>
 <div class="form-group">
 <%= f.label :personalSpec, "Personal specification" %>
-<%= f.text_area :personalSpec, class: 'form-control' %>
+<%= f.text_area :personalSpec, rows: "9", class: 'form-control' %>
 </div>
 <div class="form-group">
 <%= f.label :selectDetails, "Selection process" %>
