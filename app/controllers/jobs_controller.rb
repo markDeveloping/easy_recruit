@@ -14,6 +14,8 @@ class JobsController < ApplicationController
 		@job = Job.new(job_params)
 		if @job.save
 			redirect_to :action => 'index'
+		else
+			redirect_to :action => 'new'
 		end
 	end
 
