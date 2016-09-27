@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 	
 	before_action :logged_in_user, only: [:show]
-	before_action :correct_user, only: [:show]
+	before_action :correct_user, only: [:show, :edit]
 
 	def show
 		@user = User.find(params[:id])
@@ -28,15 +28,19 @@ class UsersController < ApplicationController
 
 	def update
 		@user = User.find(params[:id])
-		@user.update_attributes(user_params)
-		redirect_to :action => 'show'
-		flass[:success] = "Your account details have been updated."
+		if @user.save
+			@user.update_attributes(user_params)
+			redirect_to :action => 'show'
+			flash[:success] = "Your account details have been updated."
+		end
+			render 'edit'
+		else
 	end
 
 	private
 
 	def user_params
-		params.require(:user).permit(:firstname, :lastname, :email, :email_confirmation, :password, :password_confirmation)
+		params.require(:user).permit(:firstname, :lastname, :email, :email_confirmation, :department_id, :password, :password_confirmation)
 	end
 
 	def logged_in_user
@@ -50,7 +54,9 @@ class UsersController < ApplicationController
     def correct_user
       @user = User.find(params[:id])
       redirect_to(dashboard_url) unless @user == current_user
-      flash[:info] = "You don't have access to this user."
+      	unless @user == current_user
+      	flash[:info] = "You don't have access to this user."
+  		end
     end
 
 end
