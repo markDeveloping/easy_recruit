@@ -1,5 +1,24 @@
-<h1>UserMailer#account_activation</h1>
+<h1>Account activation</h1>
 
 <p>
-  <%= @greeting %>, find me in app/views/user_mailer/account_activation.html.erb
+  Dear <%= @user.firstname %>,
+</p>
+
+<p>
+You've recently created an account on Easy Recruit.
+</p>
+
+<p>
+The below link will activate your account:
+</p>
+
+<%= link_to "Activate", edit_account_activation_url(@user.activation_token, email: @user.email) %>
+
+
+<p>
+Kind Regards
+</p>
+
+<p>
+Easy Recruit
 </p>

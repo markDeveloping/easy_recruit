@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+	attr_accessor :remember_token, :activation_token
 	before_save :downcase_email
 	before_create :create_activation_digest
 
@@ -14,6 +15,18 @@ class User < ActiveRecord::Base
 	validates :department_id, presence: true
 	has_secure_password
 	validates :password, length: { minimum: 6 }
+
+# Returns the hash digest of the given string.
+  def User.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                                  BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
+  end
+
+	# Returns a random token.
+  def User.new_token
+    SecureRandom.urlsafe_base64
+  end
 
 	private
 	#sets email to lowercase

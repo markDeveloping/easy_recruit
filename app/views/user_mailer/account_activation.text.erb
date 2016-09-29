@@ -1,3 +1,11 @@
-UserMailer#account_activation
+Dear <%= @user.firstname %>,
 
-<%= @greeting %>, find me in app/views/user_mailer/account_activation.text.erb
+You've recently created an account on Easy Recruit.
+
+The below URL will activate your account:
+
+<%= edit_account_activation_url(@user.activation_token, email: @user.email) %>
+
+Kind Regards
+
+Easy Recruit
