@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'dashboards#index'
 
+  resources :account_activations, only: [:edit]
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
