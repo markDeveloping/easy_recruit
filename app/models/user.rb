@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
 	has_secure_password
 	validates :password, length: { minimum: 6 }
 
-# Returns the hash digest of the given string.
+	# Returns the hash digest of the given string.
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost
@@ -26,6 +26,13 @@ class User < ActiveRecord::Base
 	# Returns a random token.
   def User.new_token
     SecureRandom.urlsafe_base64
+  end
+
+	# Returns true if the given token matches the digest.
+  def authenticated?(attribute, token)
+    digest = send("#{attribute}_digest")
+    return false if digest.nil?
+    BCrypt::Password.new(digest).is_password?(token)
   end
 
 	private

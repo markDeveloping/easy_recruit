@@ -13,6 +13,7 @@ class JobsController < ApplicationController
 	def create
 		@job = Job.new(job_params)
 		if @job.save
+			flash[:success] = "Job created."
 			redirect_to :action => 'index'
 		else
 			redirect_to :action => 'new'
