@@ -1,0 +1,15 @@
+<h1>Forgot password</h1>
+<p>Enter your accounts email address and we'll email you a temporary password.</p>
+<div class="row">
+  <div class="col-md-4">
+    <%= form_for(:password_reset, url: password_resets_path) do |f| %>
+    <div class="form-group">
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+  	</div>
+  	<div class="form-group">
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+  </div>
+    <% end %>
+  </div>
+</div>
