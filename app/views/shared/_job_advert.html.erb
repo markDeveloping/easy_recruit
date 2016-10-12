@@ -5,6 +5,20 @@
 <%= f.text_field :title, class: 'form-control' %>
 </div>
 <div class="form-group">
+<%= f.label :salaryMin, "Minimum salary" %>
+<div class="input-group">
+<span class="input-group-addon">£</span>
+<%= f.number_field :salaryMin, class: 'form-control' %>
+</div>
+</div>
+<div class="form-group">
+<%= f.label :salaryMax, "Maximum salary" %>
+<div class="input-group">
+<span class="input-group-addon">£</span>
+<%= f.number_field :salaryMax, class: 'form-control' %>
+</div>
+</div>
+<div class="form-group">
 <%= f.label :jobDescription, "Job description" %>
 <%= f.text_area :jobDescription, rows: "9", class: 'form-control' %>
 </div>

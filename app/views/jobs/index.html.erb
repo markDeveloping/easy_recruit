@@ -3,7 +3,7 @@
 <br><br>
 <% @job.order("created_at desc").each do |j| %>
 <div class="well well-lg">
-<h3><a href=#><%= j.title %></a></h3>
+<h3><%= j.title %></h3>
 <p>Created at: <%= j.created_at.strftime("%d/%m/%Y") %></p>
 <p>Ref: <%= j.id %></p>
 <%= link_to "Edit job advert", edit_job_path(j.id), class: "btn btn-default" %>
