@@ -1,3 +1,4 @@
+<%= render 'shared/job_error' %>
 <div class="col-md-6">
 <%= form_for @job do |f| %>
 <div class="form-group">
@@ -28,7 +29,7 @@
 </div>
 <div class="form-group">
 <%= f.label :selectDetails, "Selection process" %>
-<%= f.text_area :selectDetails, class: 'form-control' %>
+<%= f.text_area :selectDetails, rows: "6", class: 'form-control' %>
 </div>
 <div class="form-group">
 <%= f.label :contract_id, "Contract type" %>
@@ -38,6 +39,15 @@
 <%= f.label :work_pattern_id, "Working pattern" %>
 <%= f.select :work_pattern_id, WorkPattern.all.collect { |d| [ d.working_pattern, d.id ] }, {include_blank: true}, class: "form-control"  %>
 </div>
-<%= f.submit class: "btn btn-primary"  %>
+<h2>Location</h2>
+<%= f.fields_for :locations do |locations_form| %>
+<div class="form-group">
+	<%= locations_form.label :address, "Address" %>
+	<%= locations_form.text_field :address, class: 'form-control' %>
+</div>
+<% end %>
+<div class="form-group">
+<%= f.submit class: "btn btn-primary" %>&nbsp;&nbsp;&nbsp;<%= link_to('Preview advert')%>
+</div>
 <% end %>
 </div>

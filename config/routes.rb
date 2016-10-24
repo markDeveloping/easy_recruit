@@ -3,6 +3,14 @@ Rails.application.routes.draw do
 
   
 
+  get 'applications/index'
+
+  get 'applications/new'
+
+  get 'applications/create'
+
+  get 'applications/update'
+
   get 'password_resets/new'
 
   get 'password_resets/edit'

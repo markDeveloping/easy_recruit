@@ -31,6 +31,9 @@ gem 'bcrypt', '~> 3.1.7'
 # To enable features such as static asset serving and logging on Heroku
 gem 'rails_12factor', group: :production
 
+#location
+gem 'geocoder'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

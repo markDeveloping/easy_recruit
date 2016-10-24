@@ -8,6 +8,7 @@ class JobsController < ApplicationController
 
 	def new
 		@job = Job.new
+		2.times { @job.locations.build}
 	end
 
 	def create
@@ -16,7 +17,7 @@ class JobsController < ApplicationController
 			flash[:success] = "Job created."
 			redirect_to :action => 'index'
 		else
-			redirect_to :action => 'new'
+			render 'new'
 		end
 	end
 
@@ -26,14 +27,17 @@ class JobsController < ApplicationController
 
 	def update
 		@job = Job.find(params[:id])
-		@job.update_attributes(job_params)
+		if @job.update_attributes(job_params)
 		redirect_to :action => 'index'
+		else
+			render 'edit'
+		end
 	end
 
 	private
 
 	def job_params
-	params.require(:job).permit(:title, :jobDescription, :personalSpec, :selectDetails, :work_pattern_id, :contract_id, :salaryMin, :salaryMax)
+	params.require(:job).permit(:title, :jobDescription, :personalSpec, :selectDetails, :work_pattern_id, :contract_id, :salaryMin, :salaryMax, locations_attributes: [:id, :address])
 	end
 
 	def logged_in_user
