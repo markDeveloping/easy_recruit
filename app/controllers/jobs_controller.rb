@@ -8,7 +8,6 @@ class JobsController < ApplicationController
 
 	def new
 		@job = Job.new
-		2.times { @job.locations.build}
 	end
 
 	def create

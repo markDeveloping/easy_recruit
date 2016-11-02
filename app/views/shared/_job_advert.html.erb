@@ -39,13 +39,6 @@
 <%= f.label :work_pattern_id, "Working pattern" %>
 <%= f.select :work_pattern_id, WorkPattern.all.collect { |d| [ d.working_pattern, d.id ] }, {include_blank: true}, class: "form-control"  %>
 </div>
-<h2>Location</h2>
-<%= f.fields_for :locations do |locations_form| %>
-<div class="form-group">
-	<%= locations_form.label :address, "Address" %>
-	<%= locations_form.text_field :address, class: 'form-control' %>
-</div>
-<% end %>
 <div class="form-group">
 <%= f.submit class: "btn btn-primary" %>&nbsp;&nbsp;&nbsp;<%= link_to('Preview advert')%>
 </div>

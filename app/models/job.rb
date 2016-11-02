@@ -5,7 +5,6 @@ has_many :users, :through => :access_jobs
 has_one :contract
 has_one :workpattern
 has_many :locations
-accepts_nested_attributes_for :locations
 
 validates :title, presence: true
 validates :salaryMin, presence: true, length: {maximum: 6}
