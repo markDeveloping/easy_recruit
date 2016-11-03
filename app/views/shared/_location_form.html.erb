@@ -1,0 +1,12 @@
+<%= render 'shared/job_error' %>
+<div class="col-md-6">
+<%= form_for ([@job, @job.locations.build])do |f| %>
+<div class="form-group">
+	<%= f.label :address %>
+	<%= f.text_field :address, class: 'form-control' %>
+</div>
+<div class="form-group">
+<%= f.submit "Add location", class: "btn btn-default" %>
+</div>
+<% end %>
+</div>
