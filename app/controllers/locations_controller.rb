@@ -1,19 +1,19 @@
 class LocationsController < ApplicationController
 
 	def new
-		@location = Location.new
+		@job = Job.find(params[:job_id])
+		@locations= @job.locations
+		@location = @job.locations.build
 	end
 
 	def create
 		@job = Job.find(params[:job_id])
 		@location = @job.locations.create(location_params)
 		if @location.save
-		render 'new'
+		redirect_to new_job_location_path(@job)
+		else
+			redirect_to new_job_location_path(@job)
 		end
-	end
-
-	def edit
-		@location = Location.find(params[:id])
 	end
 
 	def destroy

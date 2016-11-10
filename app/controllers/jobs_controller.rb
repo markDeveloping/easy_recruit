@@ -13,7 +13,7 @@ class JobsController < ApplicationController
 	def create
 		@job = Job.new(job_params)
 		if @job.save
-			render 'locations/new'
+			redirect_to new_job_location_path(@job)
 		else
 			render 'new'
 		end
@@ -26,7 +26,7 @@ class JobsController < ApplicationController
 	def update
 		@job = Job.find(params[:id])
 		if @job.update_attributes(job_params)
-		render 'locations/edit'
+		redirect_to new_job_location_path(@job)
 		else
 			render 'edit'
 		end
