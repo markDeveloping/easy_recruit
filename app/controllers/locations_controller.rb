@@ -3,7 +3,6 @@ class LocationsController < ApplicationController
 	def new
 		@job = Job.find(params[:job_id])
 		@locations= @job.locations
-		@location = @job.locations.build
 	end
 
 	def create
