@@ -20,6 +20,14 @@
 </div>
 </div>
 <div class="form-group">
+<%= f.label :grade_id, "Grade"%>
+<%= f.select :grade_id, Grade.all.collect { |g| [ g.grade, g.id ] }, {include_blank: true}, class: "form-control" %>
+</div>
+<div class="form-group">
+<%= f.label :grade_equivalent, "Equivalent grade" %>
+<%= f.text_field :grade_equivalent, class: 'form-control' %>
+</div>
+<div class="form-group">
 <%= f.label :jobDescription, "Job description" %>
 <%= f.text_area :jobDescription, rows: "9", class: 'form-control' %>
 </div>
