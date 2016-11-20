@@ -3,6 +3,28 @@
 <div class="location">
 	<img src="https://maps.googleapis.com/maps/api/staticmap?size=800x400&markers=color:blue%7Clabel:J%7C<% @locations.each do |l| %><%= l.latitude %>,<%= l.longitude %>|<% end %>&key=AIzaSyBB3SruykFFAP7qsmV9Sln2nQ6aIYCXYI8">
 </div>
+<div>
+	<div class="row">
+	    <div class="col-md-7">
+	<table class="table">
+		<thead>
+			<tr>
+				<th><span class="glyphicon glyphicon-map-marker"></span> Addresses</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @locations.each do |a| %>
+					<tr>
+						<td><%= a.address %></td>
+						<td><%= link_to "Remove", [@job, a], :method => 'delete' %></td>
+					</tr>
+			<% end %>
+		</tbody>
+	</table>
+	</div>
+</div>
+</div>
 <br>
 <% end %>
 <%= render 'shared/location_form' %>

@@ -16,7 +16,10 @@ class LocationsController < ApplicationController
 	end
 
 	def destroy
-		
+		@job = Job.find(params[:job_id])
+		@location = Location.find(params[:id])
+		@location.destroy
+		redirect_to new_job_location_path(@job)
 	end
 
 	private
