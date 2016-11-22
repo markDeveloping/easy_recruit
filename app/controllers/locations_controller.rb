@@ -11,6 +11,7 @@ class LocationsController < ApplicationController
 		if @location.save
 		redirect_to new_job_location_path(@job)
 		else
+			flash[:danger] = "Invalid address"
 			redirect_to new_job_location_path(@job)
 		end
 	end
