@@ -35,7 +35,7 @@ class JobsController < ApplicationController
 	private
 
 	def job_params
-	params.require(:job).permit(:title, :jobDescription, :personalSpec, :selectDetails, :work_pattern_id, :contract_id, :salaryMin, :salaryMax)
+	params.require(:job).permit(:title, :grade_id, :grade_equivalent, :jobDescription, :personalSpec, :selectDetails, :work_pattern_id, :contract_id, :salaryMin, :salaryMax)
 	end
 
 	def logged_in_user
