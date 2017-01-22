@@ -1,17 +1,18 @@
 class JobsController < ApplicationController
-
+		include SessionsHelper
 		before_action :logged_in_user, only: [:index, :new, :create, :edit, :update]
 
 	def index
-		@job = Job.all
+		@job = current_user.jobs
 	end
 
 	def new
 		@job = Job.new
 	end
 
-	def create
-		@job = Job.new(job_params)
+	def create	
+		@job = Job.create(job_params)
+		@user = current_user.access_jobs.create(job: @job)
 		if @job.save
 			redirect_to new_job_location_path(@job)
 		else

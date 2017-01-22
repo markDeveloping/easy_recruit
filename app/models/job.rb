@@ -1,7 +1,7 @@
 class Job < ActiveRecord::Base
 belongs_to :department
 has_many :access_jobs
-has_many :users, :through => :access_jobs
+has_many :users, through: :access_jobs
 has_one :contract
 has_one :workpattern
 has_one :grade
