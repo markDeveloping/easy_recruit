@@ -6,6 +6,12 @@ class JobsController < ApplicationController
 		@job = current_user.jobs
 	end
 
+	def show
+		render file: 'layouts/govuk_template'
+		@job = Job.find(params[:id])
+	end
+
+
 	def new
 		@job = Job.new
 	end

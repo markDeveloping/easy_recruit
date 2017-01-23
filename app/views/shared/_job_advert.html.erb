@@ -48,7 +48,7 @@
 <%= f.select :work_pattern_id, WorkPattern.all.collect { |d| [ d.working_pattern, d.id ] }, {include_blank: true}, class: "form-control"  %>
 </div>
 <div class="form-group">
-<%= f.submit "Save and continue", class: "btn btn-primary" %>&nbsp;&nbsp;&nbsp;<%= link_to('Preview advert')%>
+<%= f.submit "Save and continue", class: "btn btn-primary" %>&nbsp;&nbsp;&nbsp;<%= link_to "Preview advert", job_path(@job)%>
 </div>
 <% end %>
 </div>
