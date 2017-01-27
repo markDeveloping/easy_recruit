@@ -34,7 +34,8 @@ gem 'rails_12factor', group: :production
 #location
 gem 'geocoder'
 
-
+# GOV.UK design patterns and elements
+gem 'govuk_frontend_toolkit'
 # GOV.UK header and footer
 gem 'govuk_template'
 # Use Unicorn as the app server

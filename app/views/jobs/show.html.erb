@@ -1,0 +1,35 @@
+<% content_for :content do %>
+<div id="page-container">
+
+	<div class="phase-banner">
+	  <p>
+	    <strong class="phase-tag">ALPHA</strong>
+	    <span>This is a new service – your <a href="mailto:support.csjobs@csresourcing.gsi.gov.uk">feedback</a> will help us to improve it.</span>
+	  </p>
+	</div>
+
+	<div class="grid-row">
+
+		<div class="column-two-thirds">
+			<h1><%= @job.title %></h1>
+
+			<div class="details">
+				<p>Salary: £<%= @job.salaryMin %> - £<%= @job.salaryMax %></p>
+				<p>Contract:</p>
+				<p>Working pattern:</p>
+				<p>Grade:</p>
+			</div>
+
+			<h2>Job description</h2>
+			<p><%= @job.jobDescription %></p>
+			<h2>Personal specification</h2>
+			<p><%= @job.personalSpec %></p>
+			<h2>Selection process</h2>
+			<p><%= @job.selectDetails %></p>
+		</div>
+
+	</div>
+
+</div>
+<% end %>
+<%= render file: 'layouts/govuk_template' %>
