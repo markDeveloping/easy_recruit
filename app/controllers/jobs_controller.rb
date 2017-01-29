@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
 		include SessionsHelper
-		before_action :logged_in_user, only: [:index, :new, :create, :edit, :update]
+		before_action :logged_in_user
 
 	def index
 		@job = current_user.jobs
