@@ -1,3 +1,11 @@
+<h1><small>Step 3 of 3</small><br>Preview job</h1>
+<!-- <p>Some useful contectual help.</p>
+<h2>Option 1</h2>
+<p>Save and return later.</p>
+<%= link_to "Save and preview", job_path(@job), class: "btn btn-primary" %>
+<h2>Option 2</h2>
+<p>Confirm that your advert is ready and submit it for approval.</p>
+<%= link_to "Save and preview", job_path(@job), class: "btn btn-primary" %> -->
 <% content_for :content do %>
 <div id="page-container">
 
@@ -14,10 +22,13 @@
 			<h1><%= @job.title %></h1>
 
 			<div class="details">
-				<p>Salary: £<%= @job.salaryMin %> - £<%= @job.salaryMax %></p>
-				<p>Contract: <%= @job.contract_id %></p>
-				<p>Working pattern:</p>
-				<p>Grade:</p>
+				<p>Salary: <%= number_to_currency(@job.salaryMin, precision: 0, unit: "£") %> - <%= number_to_currency(@job.salaryMax, precision: 0, unit: "£") %></p>
+				<p>Contract: <%= @job.contract.contract %></p>
+				<p>Working pattern: <%= @job.work_pattern.working_pattern %></p>
+				<p>Grade: <%= @job.grade.grade %></p>
+				<% if @job.grade_equivalent? %>
+				<p>Grade equivalent: <%= @job.grade_equivalent %></p>
+				<% end %>
 			</div>
 
 			<h2>Job description</h2>

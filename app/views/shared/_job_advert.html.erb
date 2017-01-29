@@ -24,7 +24,7 @@
 <%= f.select :grade_id, Grade.all.collect { |g| [ g.grade, g.id ] }, {include_blank: true}, class: "form-control" %>
 </div>
 <div class="form-group">
-<%= f.label :grade_equivalent, "Equivalent grade" %>
+<%= f.label :grade_equivalent, "Equivalent grade (optional)" %>
 <%= f.text_field :grade_equivalent, class: 'form-control' %>
 </div>
 <div class="form-group">

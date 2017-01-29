@@ -1,5 +1,5 @@
 <%= render 'shared/job_error' %>
-<h1><small>Step 2 of 2</small><br>Set locations</h1>
+<h1><small>Step 2 of 3</small><br>Set locations</h1>
 <% unless @locations.blank? %>
 <div class="location">
 	<img src="https://maps.googleapis.com/maps/api/staticmap?size=650x400&markers=color:blue%7Clabel:J%7C<% @locations.each do |l| %><%= l.latitude %>,<%= l.longitude %>|<% end %>&key=AIzaSyBB3SruykFFAP7qsmV9Sln2nQ6aIYCXYI8">
