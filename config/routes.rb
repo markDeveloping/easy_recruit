@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   
 
-  get 'applications/index'
+  get 'applications', to: 'applications#index'
 
   get 'applications/new'
 
