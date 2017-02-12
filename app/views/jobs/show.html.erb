@@ -1,11 +1,9 @@
 <h1><small>Step 3 of 3</small><br>Preview job</h1>
-<!-- <p>Some useful contectual help.</p>
-<h2>Option 1</h2>
-<p>Save and return later.</p>
-<%= link_to "Save and preview", job_path(@job), class: "btn btn-primary" %>
-<h2>Option 2</h2>
-<p>Confirm that your advert is ready and submit it for approval.</p>
-<%= link_to "Save and preview", job_path(@job), class: "btn btn-primary" %> -->
+<div class="jumbotron">
+<%= link_to "Submit for approval", status_path(job:{status_id: 2}), method: :put, confirm: "Are you sure?", class: "btn btn-primary btn-lg" %>
+&nbsp;&nbsp;<%= link_to "Return later", jobs_path %> &nbsp;&nbsp;<%= link_to "Return to step 2", new_job_location_path(@job) %>
+</div>
+
 <% content_for :content do %>
 <div id="page-container">
 

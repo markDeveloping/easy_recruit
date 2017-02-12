@@ -7,10 +7,15 @@ class JobsController < ApplicationController
 	end
 
 	def show
-		
 		@job = Job.find(params[:id])
 	end
 
+	def status
+		@job = Job.find(params[:id])
+		if @job.update_attributes(job_params)
+		redirect_to dashboard_path
+		end
+	end
 
 	def new
 		@job = Job.new

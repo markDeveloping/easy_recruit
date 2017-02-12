@@ -5,6 +5,7 @@ has_many :users, through: :access_jobs
 belongs_to :contract
 belongs_to :work_pattern
 belongs_to :grade
+belongs_to :status
 has_many :locations
 
 validates :title, presence: true

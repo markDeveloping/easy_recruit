@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   get 'password_resets/edit'
 
+  put 'jobs/:id', to: 'jobs#status', as: 'status'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
