@@ -2,10 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.btn.btn-primary.btn-lg {
+  color: #fff;
+}
+
 @import '_grid_layout';
 @import '_typography';
 @import 'design-patterns/_alpha-beta';
 @import '_colours';
+
+
 
 #page-container {
   @extend %site-width-container;
@@ -50,4 +56,5 @@ h2 {
 		@include core-19;
 	}
 }
+
 
