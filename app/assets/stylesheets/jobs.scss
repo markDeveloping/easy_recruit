@@ -6,6 +6,10 @@
   color: #fff;
 }
 
+body {
+  background-image: image-url("background_pattern.png");
+}
+
 @import '_grid_layout';
 @import '_typography';
 @import 'design-patterns/_alpha-beta';
