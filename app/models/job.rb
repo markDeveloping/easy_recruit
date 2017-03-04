@@ -17,4 +17,7 @@ validates :grade_id, presence: true
 validates :contract_id, presence: true
 validates :work_pattern_id, presence: true
 validates :selectDetails, presence: true
+
+scope :allocation, -> { where(status_id: 2) }
+
 end

@@ -1,0 +1,19 @@
+<h1>Allocations worklist</h1>
+
+<table class="table">
+	<tr>
+		<th>#</th>
+		<th>Job title</th>
+		<th>Status</th>
+		<th>Last status change</th>
+	</tr>
+	<% @allocate.each do |a| %>
+	<tr>
+		<td><%= a.id %></td>
+		<td><%= a.title %></td>
+		<td><%= a.status.name %></td>
+		<td><%= a.updated_at %></td>
+	</tr>
+	<% end %>
+</table>
+
