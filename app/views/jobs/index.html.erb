@@ -1,4 +1,4 @@
-<h1><%= @job.count %> active jobs</h1>
+<h1><%= @job.count %> active <%= "job".pluralize(@job.count) %></h1>
 <%= link_to "<span class='glyphicon glyphicon-plus' aria-hidden='true'></span> Add a job".html_safe, {controller: "jobs", action: "new"}, method: "get", class: "btn btn-primary" %>
 <br><br>
 <% @job.order("created_at desc").each do |j| %>

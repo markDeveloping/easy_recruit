@@ -12,7 +12,7 @@
 		<td><%= a.id %></td>
 		<td><%= a.title %></td>
 		<td><%= a.status.name %></td>
-		<td><%= a.updated_at %></td>
+		<td><%= a.updated_at.to_formatted_s(:short) %></td>
 	</tr>
 	<% end %>
 </table>
