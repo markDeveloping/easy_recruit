@@ -1,6 +1,6 @@
 <h1><small>Step 3 of 3</small><br>Preview job</h1>
 <div class="jumbotron">
-<%= link_to "Submit for approval", status_path(@job), method: :put, confirm: "Are you sure?", class: "btn btn-primary btn-lg" %>
+<%= link_to "Submit for approval", status_path(@job), method: :put, class: "btn btn-primary btn-lg" %>
 &nbsp;&nbsp;<%= link_to "Return later", jobs_path %> &nbsp;&nbsp;<%= link_to "Return to step 2", new_job_location_path(@job) %>
 </div>
 
