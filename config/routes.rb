@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   
+  namespace :api, path: '/', constraints: {subdomain: 'api'} do
+    resources :jobs
+    resources :applications
+  end
 
+
+  resources :jobs
   
 
   get 'applications', to: 'applications#index'
@@ -27,7 +33,7 @@ Rails.application.routes.draw do
     resources :locations
   end
 
-  resources :users
+  resources :users, except: :destroy
 
   get '/login', to: 'sessions#new'
   
