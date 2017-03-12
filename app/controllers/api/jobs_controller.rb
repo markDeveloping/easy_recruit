@@ -4,7 +4,7 @@ module Api
 		def index
 			jobs = Job.all
 			if status_id = params[:status_id]
-				jobs = jobs.where(weapon: weapon)
+				jobs = jobs.where(status_id: status_id)
 			end
 			render json: jobs, status: 200
 		end
