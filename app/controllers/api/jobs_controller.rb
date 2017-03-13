@@ -11,7 +11,7 @@ module Api
 
 		def show
 			job = Job.find(params[:id])
-			render json: zombie, status: 200
+			render json: job, status: 200
 			
 		end
 	end
