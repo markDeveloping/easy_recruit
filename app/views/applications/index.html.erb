@@ -1,2 +1,21 @@
-<h1>Applications</h1>
-<p>This page is still being developed</p>
+<h1><%= @applications.count %> active <%= "application".pluralize(@applications.count) %></h1>
+<%= link_to "<span class='glyphicon glyphicon-plus' aria-hidden='true'></span> Manually add an applicant".html_safe, {controller: "applications", action: "new"}, method: "get", class: "btn btn-primary" %><br><br>
+
+<table class="table">
+	<tr>
+		<th>App ID</th>
+		<th>Job ID</th>
+		<th>Name</th>
+		<th>Email</th>
+		<th>Last status change</th>
+	</tr>
+	<% @applications.each do |a| %>
+	<tr>
+		<td><%= a.id %></td>
+		<td><%= a.job_id %></td>
+		<td><%= a.first_name%> <a.last_name></td>
+		<td><%= a.email%></td>
+		<td><%= a.updated_at.to_formatted_s(:short) %></td>
+	</tr>
+	<% end %>
+</table>

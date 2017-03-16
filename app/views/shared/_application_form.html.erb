@@ -1,0 +1,24 @@
+<div class="col-md-6">
+<%= render 'shared/application_error' %>
+<%= form_for @application do |f| %>
+<div class="form-group">
+<%= f.label :first_name, "first name" %>
+<%= f.text_field :first_name, class: 'form-control' %>
+</div>
+<div class="form-group">
+<%= f.label :last_name, "Last name" %>
+<%= f.text_field :last_name, class: 'form-control' %>
+</div>
+<div class="form-group">
+<%= f.label :email, "Email" %>
+<%= f.text_field :email, class: 'form-control' %>
+</div>
+<div class="form-group">
+<%= f.label :job_id, "Job ID" %>
+<%= f.number_field :job_id, class: 'form-control' %>
+</div>
+<div class="form-group">
+<%= f.submit "Save and continue", class: "btn btn-primary" %>
+</div>
+<% end %>
+</div>

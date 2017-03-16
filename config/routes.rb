@@ -4,18 +4,8 @@ Rails.application.routes.draw do
     resources :jobs
     resources :applications
   end
-
-
-  resources :jobs
   
-
-  get 'applications', to: 'applications#index'
-
-  get 'applications/new'
-
-  get 'applications/create'
-
-  get 'applications/update'
+  resources :applications
 
   get 'password_resets/new'
 
